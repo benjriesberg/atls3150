@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+
+/* form styling */
+
+
+#wrapper {
+	width: 60%;
+	margin-left:4%;
+}
+
+div#formcol1 {
+	float:left;	
+	width: 100%;
+}
+
+/* Step 12: line up labels/fields, drop the bullet points */
+label {
+	margin-right: .3em;
+	width: 6.3em; /* deliberately wide -- tweak to taste */
+	display: inline-block; /* width doesn't apply to inline elements like "label" */
+}
+
+/* we place the id formcol1 in front of the li element in order to
+limit this formatting to the top part of the form */
+#formcol1 li {
+	list-style:none;
+}
+
+/* Step 17: right-align the labels in the top section only.
+   NOTE: applying text-align:right to the general "label" rule above
+   also affects the radio-button labels at the bottom of the form
+   (Lecture / Computer Lab), which pushes their text away from the
+   button and looks broken since those labels come *after* their
+   inputs. The fix is to scope the right-alignment to the labels in
+   the top section (#formcol1) instead of every label on the page. */
+#formcol1 label {
+	text-align: right;
+}
+
+/* Step 14/16c: bring the radio-button label/input pairs closer together */
+#multchoice label {
+	width: auto;
+	margin-right: 1.2em;
+}
+
+/* Step 18a: highlight current keyboard/mouse focus */
+select:focus, select:active, input:focus, input:active, input:focus +
+label, input:active + label, label[for]:focus, label[for]:active {
+	color: #FFF !important;
+	background-color: #BB3D2F !important;
+}
+
+/* Step 18c: use color, in addition to the asterisk, to cue required fields */
+#formcol1 input.reqfield {
+	background:#FF9;
+}
+
+/* Step 7 note: page <title> was updated directly in the HTML <head> */
+
+/* end of form css */
